@@ -34,7 +34,21 @@
 <body>
 
   <!-- Header / Hero Section -->
-  <header>
+  <header>  /* Optimize images to prevent layout shift */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    will-change: auto;
+  }
+  
+  /* Container for images to maintain aspect ratio and prevent CLS */
+  header img,
+  section img {
+    width: 100%;
+    height: auto;
+  }
     <div>
       <img src="img/intel-header-logo.svg" alt="Intel Corporation logo - leading technology company committed to sustainability" width="200" height="80" loading="lazy" />
       <!-- Main Heading -->

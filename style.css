@@ -1,0 +1,11 @@
+/* LTR (default) */
+body {
+  text-align: left;
+  direction: ltr;
+}
+
+/* RTL */
+html[dir="rtl"] body {
+  text-align: right;
+  direction: rtl;
+}

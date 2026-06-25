@@ -116,3 +116,8 @@ section {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Light blue background for subscription section */
+.bg-light-blue {
+  background-color: #e3f2fd;
+}

@@ -5,6 +5,15 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #212529;
   background-color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Optimize images to prevent layout shift */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: auto;
 }
 
 /* RTL */
@@ -120,4 +129,10 @@ section {
 /* Light blue background for subscription section */
 .bg-light-blue {
   background-color: #e3f2fd;
+}
+
+/* Performance optimization: Ensure smooth animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

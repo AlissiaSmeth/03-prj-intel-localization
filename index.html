@@ -4,7 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Intel's 55+ year journey of innovation and sustainability. Discover how our commitment to technology has shaped a more sustainable future for our planet." />
+  <meta name="theme-color" content="#0d47a1" />
+  <meta property="og:title" content="Intel: Sustainability Through the Ages" />
+  <meta property="og:description" content="Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/intel-header-logo.svg" />
+  <meta name="author" content="Intel Corporation" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50' font-size='90' fill='%230d47a1' font-weight='bold'>i</text></svg>" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -37,7 +46,7 @@
     <div>
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Intel founders Robert Noyce and Gordon Moore in 1968 establishing Intel Corporation" />
+      <img src="img/1.jpg" alt="Intel founders Robert Noyce and Gordon Moore in 1968 establishing Intel Corporation" loading="lazy" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company
         NM Electronics to Intel Corporation, laying the foundation for
@@ -49,7 +58,7 @@
     <div>
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Intel 4004 microprocessor, the world's first commercial microprocessor from 1971" />
+      <img src="img/2.jpg" alt="Intel 4004 microprocessor, the world's first commercial microprocessor from 1971" loading="lazy" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor,
         igniting the microprocessor revolution and propelling the future
@@ -61,7 +70,7 @@
     <div>
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Intel 8086 processor chip from 1978 establishing x86 architecture" />
+      <img src="img/3.jpg" alt="Intel 8086 processor chip from 1978 establishing x86 architecture" loading="lazy" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture
         that drives countless PCs and servers in the modern era.
@@ -72,7 +81,7 @@
     <div>
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Intel 386 processor with 32-bit architecture from 1985 enabling new computing capabilities" />
+      <img src="img/4.jpg" alt="Intel 386 processor with 32-bit architecture from 1985 enabling new computing capabilities" loading="lazy" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture,
         ushering in a new era of performance and multitasking for
@@ -84,7 +93,7 @@
     <div>
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Chart showing Intel's peak greenhouse gas emissions in 2006 with downward trend afterward" />
+      <img src="https://placehold.co/250x100" alt="Chart showing Intel's peak greenhouse gas emissions in 2006 with downward trend afterward" loading="lazy" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions
         for operations. Over subsequent years, Intel invests heavily in
@@ -97,7 +106,7 @@
     <div>
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Intel RISE strategy initiative logo promoting responsible and sustainable business practices" />
+      <img src="https://placehold.co/250x100" alt="Intel RISE strategy initiative logo promoting responsible and sustainable business practices" loading="lazy" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable,
         Enabling) strategy and 2030 goals, aiming to drive industry-wide
@@ -109,7 +118,7 @@
     <div>
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Intel net-zero 2040 commitment announcement for greenhouse gas emissions reduction" />
+      <img src="https://placehold.co/250x100" alt="Intel net-zero 2040 commitment announcement for greenhouse gas emissions reduction" loading="lazy" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse
         gas emissions (Scope 1 and 2) across its global operations
@@ -121,7 +130,7 @@
     <div>
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Intel renewable energy achievement showing 99% renewable electricity usage worldwide" />
+      <img src="https://placehold.co/250x100" alt="Intel renewable energy achievement showing 99% renewable electricity usage worldwide" loading="lazy" />
       <p>
         The company achieves 99% renewable electricity usage worldwide,
         helping to drastically lower carbon emissions and driving progress
@@ -133,7 +142,7 @@
     <div>
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Intel Sustainability Summit 2024 bringing together industry leaders for sustainable manufacturing" />
+      <img src="https://placehold.co/250x100" alt="Intel Sustainability Summit 2024 bringing together industry leaders for sustainable manufacturing" loading="lazy" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers,
         government officials, and industry leaders to collaborate on
@@ -216,6 +225,8 @@
                 class="form-control" 
                 id="full-name" 
                 name="full-name"
+                autocomplete="name"
+                spellcheck="false"
                 required
                 aria-required="true"
                 aria-describedby="full-name-help" />
@@ -232,6 +243,7 @@
                 class="form-control" 
                 id="email-input" 
                 name="email"
+                autocomplete="email"
                 required
                 aria-required="true"
                 aria-describedby="email-help" />

@@ -1,3 +1,8 @@
+/* Critical rendering path optimization */
+* {
+  box-sizing: border-box;
+}
+
 /* LTR (default) */
 body {
   text-align: left;
@@ -6,6 +11,8 @@ body {
   color: #212529;
   background-color: #ffffff;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 /* Optimize images to prevent layout shift */
@@ -14,6 +21,32 @@ img {
   max-width: 100%;
   height: auto;
   aspect-ratio: auto;
+  will-change: auto;
+}
+
+/* Container for images to maintain aspect ratio and prevent CLS */
+header img,
+section img {
+  width: 100%;
+  height: auto;
+}
+
+/* Timeline image containers - reserved space */
+section > div {
+  contain: layout style paint;
+}
+
+/* Specific aspect ratios to prevent CLS */
+img[width="200"][height="80"] {
+  aspect-ratio: 200 / 80;
+}
+
+img[width="400"][height="300"] {
+  aspect-ratio: 400 / 300;
+}
+
+img[width="250"][height="100"] {
+  aspect-ratio: 250 / 100;
 }
 
 /* RTL */
@@ -33,17 +66,41 @@ h1, h2, h3, h4, h5, h6 {
   color: #212529;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  display: block;
 }
 
 .form-control {
   border-color: #dee2e6;
   color: #212529;
+  transition: none;
+  min-height: 2.5rem;
+  contain: style paint;
 }
 
 .form-control:focus {
   border-color: #0d47a1;
   box-shadow: 0 0 0 0.2rem rgba(13, 71, 161, 0.25);
   color: #212529;
+  transition: none;
+}
+
+/* Reserve space for form validation messages */
+.mb-3 {
+  margin-bottom: 1rem;
+  position: relative;
+  contain: layout style;
+  min-height: 3rem;
+}
+
+/* Prevent validation messages from causing layout shift */
+.invalid-feedback,
+.valid-feedback,
+.form-text {
+  position: static;
+  height: auto;
+  visibility: visible;
+  display: block;
+  min-height: 1.25rem;
 }
 
 .form-text {
@@ -71,12 +128,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(13, 71, 161, 0.5);
+  transition: none;
+}
+
+/* Prevent button transitions from causing CLS */
+.btn {
+  transition: none !important;
+}
+
+/* Cards with containment to prevent layout shifts */
+.card {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.card h-100 {
+  contain: layout style;
 }
 
 /* Footer link contrast */
 footer a {
   color: #ffffff;
-  transition: opacity 0.3s ease;
+  transition: none;
 }
 
 footer a:hover,
@@ -86,9 +159,14 @@ footer a:focus {
 }
 
 /* Link focus states for accessibility */
+a {
+  transition: none;
+}
+
 a:focus {
   outline: 2px solid #0d47a1;
   outline-offset: 2px;
+  transition: none;
 }
 
 /* Input validation feedback contrast */
@@ -108,9 +186,80 @@ a:focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
-/* Container and section spacing */
+/* Container and section spacing with CLS prevention */
 section {
   padding: 2rem 0;
+  contain: layout style;
+}
+
+header {
+  contain: layout style paint;
+}
+
+footer {
+  contain: layout style paint;
+}
+
+/* Container sizing to prevent shifts */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  contain: layout style;
+}
+
+/* Row with containment */
+.row {
+  contain: layout style;
+}
+
+/* Columns with reserved space */
+.col-12,
+.col-md-6,
+.col-lg-4,
+[class*='col-'] {
+  contain: layout style;
+  overflow: visible;
+}
+
+/* Form with containment to prevent CLS */
+form {
+  contain: layout style;
+}
+
+/* Alert messages with containment to prevent CLS */
+.alert {
+  contain: layout style paint;
+  min-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form check/checkbox containment */
+.form-check {
+  contain: layout style;
+}
+
+/* Form check input with fixed dimensions */
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  contain: style paint;
+  flex-shrink: 0;
+}
+
+/* Form check label */
+.form-check-label {
+  display: block;
+  contain: style;
+}
+
+/* Button containment */
+button,
+.btn {
+  contain: style paint;
 }
 
 /* Utility class for screen reader text */
